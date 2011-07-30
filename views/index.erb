@@ -1,0 +1,16 @@
+<h1><%= @page[:title] %></h1>
+<p><%= @page[:subtitle] %></p>
+
+<form action="/" method="post">
+	<label for="input_url">Enter a URL to go grab:</label>
+	<input type="text" name="url" id="input_url" value="<%= @page[:requested] if @page.key? :requested %>" <%= 'class="error"' if @page.key? :error %>>
+	<input type="submit" value="Grab">
+</form>
+
+<% if @page[:page] %>
+<p class="requested" data-page-id="<%= @page[:page].id %>" data-page-url="<%= @page[:page].url %>">You requested the page <strong><%= @page[:page].url %></strong>, <span class="status pending">and it's currently being grabbed for you.</span></p>
+<% elsif @page[:error] %>
+<p class="error"><%= @page[:error] %></p>
+<% end %>
+
+<a href="http://github.com/kapowaz/rqmapper" title="Fork me on GitHub" id="forkme">Fork me on GitHub</a>

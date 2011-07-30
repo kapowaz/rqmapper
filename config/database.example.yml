@@ -1,0 +1,11 @@
+# make a copy of this file called database.yml with your real database credentials
+:development: &defaults
+  :adapter: mysql
+  :database: rqmapper_development
+  :username: rqmapper
+  :password: 
+  :host: localhost
+
+:test:
+  <<: *defaults
+  :database: rqmapper_test

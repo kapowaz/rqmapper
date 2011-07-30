@@ -1,0 +1,4 @@
+RQMapper
+========
+
+A small sample application to demonstrate Resque, DataMapper and Sinatra working together. A sequel of sorts to the short-lived DJMapper.

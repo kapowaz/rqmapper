@@ -1,0 +1,85 @@
+body
+{
+  font-family:Lucida Grande, sans-serif;
+  font-size:12px;
+  line-height:18px;
+  width:940px;
+  margin:0 auto;
+  padding:50px 10px;
+  background-color:rgb(64,64,64);
+  color:white;
+  text-shadow:0 1px 0 black;
+}
+
+body h1
+{
+  font-family:Helvetica Neue, sans-serif;
+  font-size:48px;
+  letter-spacing:-0.05em;
+  text-shadow:0 2px 0 black;
+}
+
+body form 
+{
+  border-top:1px solid rgba(255,255,255,0.2);
+  margin-top:50px;
+  padding-top:20px;
+}
+
+body form label { display:block; margin-bottom:5px; }
+body form input[type=text] 
+{ 
+  width:850px;
+  border-radius:3px;
+  border:none;
+  font-size:12px;
+  height:22px;
+  line-height:22px;
+  vertical-align:middle;
+  -webkit-box-shadow:0 -1px 0 rgba(0,0,0,0.5);
+}
+body form input[type=text].error { border:1px solid red; }
+body form input[type=submit] 
+{ 
+  display:inline-block;
+  width:80px;
+  height:24px;
+  text-transform:uppercase;
+  font-size:12px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.4);
+  border:none;
+  border-radius:3px;
+  background-color:rgb(128,128,128);
+  color:black;
+  vertical-align:middle;
+  cursor:pointer;
+  -webkit-box-shadow:0 -1px 0 rgba(255,255,255,0.5), 0 1px 0 rgba(0,0,0,0.5);
+}
+body form input[type=submit]:hover { cursor:pointer; background-color:rgb(192,192,192); }
+
+body p.requested span.status.pending
+{
+  padding-right:20px;
+  background-image:url(/images/loading.gif);
+  background-repeat:no-repeat;
+  background-position:center right;
+}
+
+body pre
+{
+  width:940px;
+  overflow:auto;
+}
+
+#forkme
+{
+  position:absolute; 
+  top:0; 
+  right:0;
+  background-image: url('https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67');
+  display:block;
+  height:149px;
+  width:149px;
+  overflow:hidden;
+  text-indent:-999px;
+}

@@ -1,0 +1,9 @@
+# make a copy of this called redis.yml with your real redis instance URI
+:development: &defaults
+  :instance: redis://user:password@server:port/
+
+:test:
+  :instance: redis://user:password@server:port/
+    
+:production:
+  :instance: redis://user:password@server:port/
