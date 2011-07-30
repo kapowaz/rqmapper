@@ -68,7 +68,7 @@ end
 
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
-  uri          = URI.parse YAML.load(File.new("config/redis.yml"))[:production][:instance]
+  uri          = URI.parse ENV["REDISTOGO_URL"]
   Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end
 
