@@ -54,6 +54,7 @@ GEM
     do_postgres (0.10.6)
       data_objects (= 0.10.6)
     fastercsv (1.5.4)
+    hirefireapp (0.0.2)
     i18n (0.6.0)
     json (1.4.6)
     mime-types (1.16)
@@ -84,6 +85,7 @@ DEPENDENCIES
   data_mapper (>= 1.1.0)
   dm-mysql-adapter
   dm-postgres-adapter
+  hirefireapp
   i18n
   resque
   rest-client

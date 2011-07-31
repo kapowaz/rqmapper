@@ -4,6 +4,7 @@ require 'rest-client'
 require 'sinatra'
 require 'data_mapper'
 require 'resque'
+require 'hirefireapp'
 
 class Page
   include DataMapper::Resource
