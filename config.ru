@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'resque/server'
 
 Bundler.setup
 
@@ -17,5 +18,7 @@ begin
 rescue => e
   $stdout.puts e
 ensure
-  run Sinatra::Application
+  run Rack::URLMap.new \
+    "/"       => Sinatra::Application,
+    "/resque" => Resque::Server.new
 end

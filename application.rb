@@ -12,18 +12,29 @@ class Page
   property :url,      String
   property :data,     Text,       :required => false
   property :pending,  Boolean,    :default => true
+
+  @queue = :pages
   
   after :create do
-    Resque.enqueue self
+    Resque.enqueue Page, self
   end
   
-  def perform
+  def self.perform(params)
+    puts "performing grab for page #{params["url"]}…"
     begin
-      self.data    = RestClient.get self.url
-      self.pending = false
-      self.save
+      page = Page.get params["id"]
+      
+      unless page.nil?
+        print "requesting data…"
+        page.data    = RestClient.get page.url
+        page.pending = false
+        page.save
+        print " done!\n"
+      else
+        puts "page with ID #{page_hash["id"]} couldn't be found"
+      end
     rescue => e
-      # failed to open the url ...
+      puts "failed to open the url – #{e}"
     end
   end
 end
@@ -63,7 +74,6 @@ configure :development do
   DataMapper.setup :default, YAML.load(File.new("config/database.yml"))[:development]
   uri          = URI.parse YAML.load(File.new("config/redis.yml"))[:development][:instance]
   Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-
 end
 
 configure :production do

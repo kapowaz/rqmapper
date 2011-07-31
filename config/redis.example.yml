@@ -4,6 +4,3 @@
 
 :test:
   :instance: redis://user:password@server:port/
-    
-:production:
-  :instance: redis://user:password@server:port/
