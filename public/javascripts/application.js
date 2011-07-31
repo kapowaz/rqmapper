@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
   jQuery.fn.requestedPage = function requestedPage(){
-    if (this.nodeName == 'P' && $(this).hasClass('requested'))
+    if ($(this).length == 1 && $(this).hasClass('requested'))
     {
       var page       = $(this);
       var url        = page.attr('data-page-url');
