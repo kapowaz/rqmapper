@@ -32,7 +32,7 @@ class Page
         page.save
         print " done!\n"
       else
-        puts "page with ID #{page_hash["id"]} couldn't be found"
+        puts "page with ID #{params["id"]} couldn't be found"
       end
     rescue => e
       puts "failed to open the url – #{e}"
